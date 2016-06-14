@@ -8,14 +8,10 @@ var rename = require('gulp-rename');
 var util = require('gulp-util');
 var minifycss = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
-
 var koa = require('koa');
-var app = koa();
 
+var app = koa();
 var MockServer = require('./server/mockserver');
-//自适应布局 flexible
-// var postcss = require('gulp-postcss');
-// var px2rem = require('postcss-px2rem');
 
 var proxyServerConfig = {
     // 是否启用后端代理
@@ -27,31 +23,12 @@ var proxyServerConfig = {
         "/text.js",
         "/src/*",
         "/vendor/*",
-        "/hrcloud/*",
+        "/dist/*",
         "/conf/*"
     ],
-    // host : 'http://10.1.235.193',
-    // host : 'http://10.1.201.57:8081',
-    // host : 'http://10.1.203.72:8080',
-    // host : 'http://10.1.209.121:8081',
-    // host : 'http://10.1.253.103:8081',
-    // host : 'http://10.1.226.239:8081',
-    // host : 'http://10.1.78.38:8081',
-    //   host : 'http://10.1.201.57:8081',
-    //host : 'http://localhost:8081',
-    //host : 'http://10.1.227.51:8080',
-    // host : 'http://172.20.14.92',
-    // host : 'http://10.1.78.41:8081',
-    // host : 'http://10.1.215.171:8081',
-    // host : 'http://10.1.232.137:8081',
-    host : 'http://10.1.204.37:8081',
-    // host : 'http://10.1.78.58:8081',
-    // host: 'http://10.1.235.193:8081',
-    // host: 'http://10.1.201.57:8081',
-    // host: 'http://10.1.241.254:8081',
-    username : 'hrtest',
-    password : '97bbc79679fe1cfd9afb52fd6f01d033b479555d', //1qazxsw2
-    // password : '3fbafbd0634de48868de709b886d2def3d4a9cf6', //hrtest01
+    host : 'http://localhost:8081',
+    username : '',
+    password : '',
     context : '',
     serverport : 8080
 };
@@ -68,22 +45,22 @@ function errHandle(err) {
     this.end();
 };
 
-// 编译 src 下所有的 html 文件到 hrcloud 目录
+// 编译 src 下所有的 html 文件到 dist 目录
 gulp.task('html', function(){
     gulp.src('src/**/**/*.html')
         .pipe(rename(function(path){
             path.dirname += '';
         }))
-        .pipe(gulp.dest("./hrcloud"));
+        .pipe(gulp.dest("./dist"));
 })
 
-// 编译 src 下所有的 xml 文件到 hrcloud 目录
+// 编译 src 下所有的 xml 文件到 dist 目录
 gulp.task('xml', function(){
     gulp.src('src/widget/**/*.xml')
         .pipe(rename(function(path){
             path.dirname += '';
         }))
-        .pipe(gulp.dest("./hrcloud/widget"));
+        .pipe(gulp.dest("./dist/widget"));
 })
 // copy 业务目录下的图片到相应的目录
 gulp.task('copy:img', function(){
@@ -91,26 +68,26 @@ gulp.task('copy:img', function(){
         .pipe(rename(function(path){
             path.dirname += '';
         }))
-        .pipe(gulp.dest("./hrcloud"));
+        .pipe(gulp.dest("./dist"));
 });
 
-// 完整 copy vendor 目录下的资源到 hrcloud
+// 完整 copy vendor 目录下的资源到 dist
 gulp.task('copy:vendor', function(){
     gulp.src('./vendor/**')
-        .pipe(copy('./hrcloud'));
+        .pipe(copy('./dist'));
 });
 
-// copy static目录下的资源到 hrcloud
+// copy static目录下的资源到 dist
 gulp.task('copy:static', function(){
     gulp.src('src/static/**')
-        .pipe(gulp.dest('hrcloud/static'))
+        .pipe(gulp.dest('dist/static'))
 });
 
 // 匹配所有 css 进行 less 编译
 gulp.task('less', function(){
     gulp.src('src/**/*.css')
         .pipe(less())
-        .pipe(gulp.dest('hrcloud'));
+        .pipe(gulp.dest('dist'));
 });
 
 //匹配 css 通过 flexible 编译成rem单位
@@ -118,14 +95,14 @@ gulp.task('less', function(){
 //     var processors = [px2rem({remUnit: 10})];
 //     return gulp.src('src/pages/corehr/organiazation/index.css')
 //         .pipe(postcss(processors))
-//         .pipe(gulp.dest('hrcloud'));
+//         .pipe(gulp.dest('dist'));
 // });
 
 gulp.task('less:dist', function(){
     gulp.src(['src/**/*.css', '!src/styles/*.css'])
         .pipe(less())
         .pipe(minifycss())
-        .pipe(gulp.dest('hrcloud'));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('common', function(){
@@ -133,7 +110,7 @@ gulp.task('common', function(){
         .pipe(less())
         .pipe(concat('common.css'))
         .pipe(minifycss())
-        .pipe(gulp.dest('hrcloud/styles'));
+        .pipe(gulp.dest('dist/styles'));
 });
 
 // 编译 JS 代码，支持 ES6 语法编译
@@ -141,7 +118,7 @@ gulp.task('es2015',function(){
     gulp.src(['src/**/*.js'])
         .pipe(babel())
         .on('error', errHandle)
-        .pipe(gulp.dest('hrcloud'));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('es2015:dist',function(){
@@ -149,7 +126,7 @@ gulp.task('es2015:dist',function(){
         .pipe(babel())
         .pipe(uglify())
         .on('error', errHandle)
-        .pipe(gulp.dest('hrcloud'));
+        .pipe(gulp.dest('dist'));
 });
 
 // 监听文件改动，执行相应任务
@@ -159,9 +136,9 @@ gulp.task('watch', function(){
     gulp.watch('src/**/**/*.html', ['html']);
 });
 
-// 清空 hrcloud 目录下的资源
+// 清空 dist 目录下的资源
 gulp.task('clean',function() {
-    gulp.src('hrcloud/*', {read: false})
+    gulp.src('dist/*', {read: false})
         .pipe(clean({force: true}));
 });
 
