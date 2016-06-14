@@ -141,20 +141,26 @@ define(function(require, module, exports){
 
 ```
 
-> 对以上代码的基本说明：引入了相应的html片段和css样式，另外，由于是和portal集成，在portal部分加载了以下公共的类库或是框架：
-> 1. `bootstrap`
-> 2. `director` **处理前端路由**
-> 3. `jquery`
-> 4. `knockout` **前端MVVM框架**
-> 5. `require`
-> 6. `hrfonts`  **hrfonts是UE通过iconfont制作的图标字体库**
-> 7. `font-awesome`
-> 8. `uui`   **UUI是UAP WEB平台基于knockout和jquery封装的集数据模型和功能插件于一体的内部前端框架**
+对以上代码的基本说明：引入了相应的html片段和css样式，另外，由于是和portal集成，在portal部分加载了以下公共的类库或是框架：
+
+1. `bootstrap`
+2. `director` **处理前端路由**
+3. `jquery`
+4. `knockout` **前端MVVM框架**
+5. `require`
+6. `hrfonts`  **hrfonts是UE通过iconfont制作的图标字体库**
+7. `font-awesome`
+8. `uui`
+
+> 其中，UUI是iUAP前端技术部提供的技术产品集合，包含iuap-design、基于ko的model增强库datatable、各种插件
 
 这样基本编辑之后，在`index.html`文件中按照注释说明，添加你新增页面的导航，代码如下：
 
 ```
-<a href="#/hrcloud/pages/demo/demo"><i class="demo-menu-icon u-color-grey-400 fa fa-home fa-2x" role="presentation"></i>示例</a>
+<a href="#/hrcloud/pages/demo/demo">
+  <i class="demo-menu-icon u-color-grey-400 fa fa-home fa-2x" role="presentation"></i>
+  示例
+</a>
 ```
 
 ### 2.3 数据模拟和联调
