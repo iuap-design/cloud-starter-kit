@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!-- Head -->
+<head>
+    <meta charset="utf-8"/>
+    <title>NCCloud HR</title>
+    <meta name="description" content="Dashboard"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- <meta content="maximum-dpr=3" name="flexible" />
+    <meta content="modeName=1280-12" name="grid" /> -->
+    <!-- <link rel="stylesheet" href="vendor/flexible/flexible.css"> -->
+    <link rel="stylesheet" href="vendor/bootstrap-3.3.5/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet"  href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/uui/css/u.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="vendor/uui/css/grid.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="vendor/hrfonts/iconfont.css">
+    <link rel="stylesheet" href="/hrcloud/styles/common.css">
+    <script src="vendor/jquery/jquery-1.11.2.js" charset="utf-8"></script>
+    <!-- <script src="vendor/flexible/flexible_css.js"></script>
+    <script src="vendor/flexible/flexible.js" charset="utf-8"></script> -->
+    <script src="vendor/lodash/lodash.core.js" charset="utf-8"></script>
+  	<script src="vendor/bootstrap-3.3.5/js/bootstrap.js" charset="utf-8"></script>
+  	<script src="vendor/knockout/knockout-3.2.0.debug.js" charset="utf-8"></script>
+  	<script src="vendor/uploader/webuploader.js" charset="utf-8"></script>
+    <script src="vendor/echarts/echarts.min.js"></script>
+    <style>
+        body {
+          background-color: #eeeff1;
+        }
+      .hrcloud-header{
+        height: 50px !important;
+        line-height: 50px;
+        background-color: #ffffff;
+        color: #727171;
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .demo-navigation {
+        position: absolute;
+        width: 100px;
+        background-color: #272e38;
+        top: 90px;
+      }
+        .u-navlayout-fixed-drawer.is-upgraded:not(.is-small-screen) > .u-navlayout-header{
+             margin-left: 0;
+            width: calc(100%);
+        }
+      .demo-navigation .u-nav a {
+        border-bottom: 1px solid #e7e7e7;
+        color: #333;
+        padding: 10px 5px;
+        text-decoration: inherit;
+        color: #fff;
+        transition: background 1s;
+      }
+      .demo-navigation .u-nav a:hover{
+        background: blue;
+      }
+      .demo-navigation .u-nav a i{
+        padding: 0 5px;
+        font-size: 10px;
+      }
+      .demo-content{
+        padding: 10px 32px;
+      }
+
+    </style>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+  <div class="hrcloud-container u-navlayout u-navlayout-fixed-drawer u-navlayout-fixed-header">
+    <header class="hrcloud-header">
+      <a href="#/hrcloud/pages/home/nav/index">NCCloud HR</a>
+    </header>
+    <main>
+      <div class="demo-content" id="content">  </div>
+    </main>
+  </div>
+  <script src="vendor/uui/js/u-polyfill.js" charset="utf-8"></script>
+  <script src="vendor/uui/js/u.js" charset="utf-8"></script>
+  <script src="vendor/director/director.js" charset="utf-8"></script>
+
+  <script src="vendor/react/react.js" charset="utf-8"></script>
+  <script src="vendor/react/react-dom.js" charset="utf-8"></script>
+
+  <script src="vendor/requirejs/require.debug.js" charset="utf-8"></script>
+  <script src="./conf/require.config.js" charset="utf-8"></script>
+
+  <script type="text/javascript">
+    require([
+      './conf/route.js',
+      './conf/index.js'
+    ], function( list, pageInit ){
+      // INIT
+      pageInit.init( list );
+    });
+ </script>
+</body>
+<!--  /Body -->
+</html>

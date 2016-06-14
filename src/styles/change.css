@@ -1,0 +1,239 @@
+/**
+ *  变动类型、变动原因样式
+ *  by：daifeia   move:lizhik
+ */
+/*去掉弹窗的 默认的样式 改成设计稿的颜色*/
+#onjobstate{
+    .modal-dialog{
+    	width: 500px;
+    }
+    .modal-content{
+    	border-radius: 0px;
+    	padding:0px 10px;
+    }
+    .modal-header{
+    	height: 40px;
+    	padding-top:0px;
+    	padding:0px;
+    }
+    .modal-title{
+    	height: 40px;
+    	line-height: 40px;
+    }
+    .modal-header .close{
+    	margin-top:10px;
+    }
+
+    .modal-footer{
+    	border:0px;
+    }
+    .modal-dialog .modal-conten .modal-footer .btn.yyblue-button{
+    	border:none;
+    	color:#fff;
+    	border-radius: 0px;
+    }
+}
+
+.col-md-8:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #f00;
+}
+
+.col-md-8::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #f00;
+}
+.col-md-8:-ms-input-placeholder{
+    color: #f00;
+}
+
+.col-md-8::-webkit-input-placeholder{
+    color: #f00;
+}
+
+#onjobstate .row{
+	margin:15px 0px;
+}
+.job-padding{
+	padding-left: 2px;
+}
+.row .col-md-3 label{
+	width: 100%;
+	color:#666;
+	font-weight: 400;
+	font-size: 14px;
+    font-family: "microsoft yahei";
+	text-align: right;
+}
+#onjobstate .col-md-3,
+#onjobstate .col-md-8{
+	height: 34px;
+	line-height: 34px;
+}
+.delmodel{
+	float:left;
+	color:#333;
+}
+
+
+ /*变动原因中的tab切换样式*/
+ .person-tab{
+	width: 100%;
+	height: 42px;
+	display: block;
+	margin-bottom:20px;
+	position: relative;
+}
+.person-tab .person-tab-div{
+	width: 60px;
+	height: 3px;
+	background:#ff8687;
+	position: absolute;
+	bottom:0px;
+	left:0px;
+}
+.person-tab .person-ul{
+	width: auto;
+	height: 42px;
+	display: block;
+	padding:0px;
+}
+.person-tab .person-ul span{
+	width: 60px;
+	height: 42px;
+	float:left;
+	display: block;
+	list-style: none;
+	color:#666;
+	font-weight: 500;
+	font-size:15px;
+	font-family: '微软雅黑';
+	text-align: center;
+	line-height: 42px;
+	cursor: pointer;
+}
+
+/**
+ * 外层样式
+ */
+.onjobstate{
+	width: 100%;
+	min-height:600px;
+	display: block;
+	padding:10px 10px 20px 20px;
+	background:#fff;
+	font-family: "microsoft yahei";
+}
+     .onjob{
+    	width: 100%;
+    	height: auto;
+    	overflow: hidden;
+    	display: block;
+    }
+     .onjob-top{
+    	width: 100%;
+    	height: 24px;
+    	display: block;
+    	position: relative;
+    }
+     .oj-small{
+    	width: 3px;
+    	height: 16px;
+    	display: block;
+    	background: #1baede;
+    	position: absolute;
+    	top:4px;
+    	left:0px;
+    	z-index: 1;
+    }
+    .oj-con{
+    	width: auto;
+    	height: 16px;
+    	line-height: 16px;
+    	font-size: 14px;
+    	font-weight: 500;
+    	display: block;
+    	padding:0px 5px;
+    	position: absolute;
+    	top:4px;
+    	left:3px;
+    	color:#333;
+    	z-index: 1;
+    	background:#fff;
+    }
+    .oj-big{
+    	width: 100%;
+    	height: 16px;
+    	background: #ebf2fc;
+    	position: absolute;
+    	top:4px;
+    	left:0px;
+    	z-index: 0;
+    }
+
+    .onjob-bottom{
+    	width: 100%;
+    	min-height: 100px;
+    	display: block;
+    	padding:15px 0px 20px 0px;
+    }
+    .onjob-bottom .uls{
+    	width:auto;
+    	height: auto;
+    	display: inline-block;
+    	float:left;
+    }
+    .onjob-bottom .normal{
+    	width: auto;
+    	height: 56px;
+    	margin-right: 10px;
+    	display: inline-block;
+    	padding:0px 23px;
+    	line-height: 56px;
+    	font-size:16px;
+    	color:#13799b;
+    	background:#e9f7fc;
+    	border:1px solid #98daf0;
+    	cursor: pointer;
+    	float:left;
+    }
+    .onjob-bottom .normal:hover{
+    	background:#c4eaf6;
+    }
+    .onjob-bottom .stop{
+    	width: auto;
+    	height: 56px;
+    	margin-right: 10px;
+    	display: inline-block;
+    	padding:0px 23px;
+    	line-height: 56px;
+    	font-size:16px;
+    	color:#666666;
+    	background:#f1f1f1;
+    	border:1px solid #d7d7d7;
+    	cursor: pointer;
+    	float:left;
+    }
+    /*.onjob-bottom .stop:hover{
+    	background:#c4eaf6;
+    }*/
+    .onjob-bottom .addjob{
+    	width: 56px;
+    	height: 56px;
+    	margin-right: 10px;
+    	display: inline-block;
+    	float:left;
+    	padding:0px 0px;
+    	line-height: 56px;
+    	font-size:16px;
+    	color:#13799b;
+    	background:#fff;
+    	border:1px solid #98daf0;
+    	cursor: pointer;
+    }
+    .addjob .blue{
+    	width: 16px;
+    	height: 16px;
+    	display: block;
+    	margin:0 auto;
+    	color:#6bcaea;
+    	-webkit-text-stroke-width: 0px;
+    }

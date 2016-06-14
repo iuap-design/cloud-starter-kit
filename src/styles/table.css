@@ -1,0 +1,76 @@
+/**
+ *表格样式：
+ *from: lizhik, tsingm
+ */
+.main-container {
+    background: #fff;
+    padding: 20px;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.hr-table table{
+    width:100%;
+    table-layout:fixed;
+}
+.hr-table tr{
+    height:45px;
+    border: 1px solid #eeeff1;
+}
+.hr-table th, .hr-table td{
+    padding-left: 10px;
+}
+.hr-table thead {
+    background-color: #eeeff1;
+    font-size: 14px;
+}
+.hr-table th{
+    font-weight: normal;
+}
+.hr-table th:hover{
+    background:#d7d7d7;
+}
+.hr-table tbody{
+    font-size: 12px;
+}
+.hr-table tbody tr:hover{
+    background:#e9f7fc;
+}
+.hr-table tbody td{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.hr-table thead th, .hr-table tbody td{
+    text-align: left;
+}
+.hr-table tr td:last-child{
+    text-align: right;
+    padding-right: 10px;
+}
+
+/**
+ * 行操作图标样式
+ */
+.hr-table tbody i{
+    margin-left:15px;
+    cursor:pointer;
+    color:#2788CC;
+}
+.hr-table tbody i{
+    display: none;
+}
+.hr-table tbody tr:hover i{
+    display: inline;
+}
+
+/**
+ * 穿透样式
+ */
+.check-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.hr-table tbody tr:hover .check-link{
+    color:#2788CC;
+}

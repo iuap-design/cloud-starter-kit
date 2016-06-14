@@ -1,0 +1,117 @@
+/**
+ *头部标题栏样式：
+ *form: lizhik, tsingm
+ */
+.title-header{
+	height: 26px;
+	margin-bottom: 6px;
+	position: relative;
+}
+.title-header .name {
+	float: left;
+	line-height: 26px;
+	font-size: 16px;
+	margin: 0;
+}
+.title-header .star {
+	float: left;
+	line-height: 26px;
+	font-size: 18px;
+	margin-left: 5px;
+	color: #FB9611;
+}
+.title-header .link{
+	float: right;
+	line-height: 26px;
+	font-size: 12px;
+	width: 90px;
+	height: 26px;
+	border-radius: 13px;
+	text-align: center;
+	background-color: #FFFFFF;
+	color: #0377c1;
+}
+.title-header .link:hover{
+	text-decoration: none;
+}
+
+/**
+ *头部操作栏样式：
+ */
+.common-header{
+	height: 56px;
+	padding: 10px 20px;
+	background-color: #FFFFFF;
+}
+.common-header .right {
+	float: right;
+}
+.common-header .choose {
+    float: left;
+}
+.common-header .choose label{
+	font-size: 14px;
+	font-weight: normal;
+}
+
+/*select下拉箭头样式*/
+.common-header select {
+	border: solid 1px #BFBFBF;
+	/*默认的select选择框样式清除*/
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+
+	/*在选择框的最右侧中间显示小箭头图片*/
+	background: url('/hrcloud/static/img/selectDown.png') #fff no-repeat 90% center ;
+
+	/*为下拉小箭头留出一点位置，避免被文字覆盖*/
+	padding:0px 15px 0px 15px;
+	min-width: 87px;
+	outline: none;
+}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+.common-header select::-ms-expand {
+	display: none;
+}
+
+/*搜索框*/
+.common-header .search{
+	float: left;
+	margin-left: 10px;
+	display: inline;
+}
+.common-header .search input{
+	float: left;
+    width: 160px;
+	font-size: 12px;
+	padding: 0 6px;
+    border:1px solid #BFBFBF;
+	border-right:none;
+	outline: none;
+}
+.common-header .search button{
+	float: left;
+   	width: 40px;
+    height: 36px;
+    background-color: #fff;
+	border-left: 0;
+    border-radius: 0;
+}
+.common-header .search button:hover,.common-header .search button:focus{
+    background-color: #fff;
+	border-color: #BFBFBF;
+}
+.common-header .search label{
+	float: left;
+	height: 36px;
+	line-height: 36px;
+	margin-left: 10px;
+	font-size: 14px;
+	font-weight: normal;
+	color: #0377c1;
+}
+.common-header .search label i{
+	font-size: 12px;
+	margin-left: 5px;
+}

@@ -1,0 +1,244 @@
+/**
+ * 全局通用样式
+ * form: lizhik, tsingm
+ */
+#content{
+	padding: 6px 36px;
+	font-family:tahoma, arial, 'Hiragino Sans GB', 'Microsoft YaHei', '\5b8b\4f53', sans-serif;
+	color: #333333;
+}
+
+/**
+ * 按钮样式和划过样式
+ */
+#content .blue-button{
+	min-width: 72px;
+	height: 34px;
+	background-color: #1baede;
+	border: 1px solid #1baede;
+	border-radius: 1px;
+	color: #FFFFFF;
+	font-size: 14px;
+	outline: none;
+	margin-right:10px;
+}
+#content .blue-button:hover{
+	background-color:#189cc7;
+}
+#content .white-button{
+	min-width: 72px;
+	height: 34px;
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	border-radius: 1px;
+	font-size: 14px;
+	outline: none;
+	margin-right:10px;
+}
+#content .white-button:hover{
+	background-color:#f1f1f1;
+}
+#content .green-button{
+	background-color:#39b588;
+	border:1px solid #39b588;
+	border-radius:0;
+	color:#fff;
+	outline: none;
+	margin-right:12px;
+}
+#content .green-button:hover{
+	background-color:#33a37a;
+	color:#fff;
+	outline: none;
+}
+#content .red-button{
+	background-color:#ed4047;
+	border-radius: 0;
+	outline: none;
+}
+#content .red-button:hover{
+	background-color:#d53940;
+}
+
+#content .button-disable{
+	background-color: #f1f1f1;
+	color: #9999;
+	border: 1px solid #cccccc;
+}
+#content .form-control{
+	background-color: #fff;
+}
+/**
+ *常用属性：
+ *可根据个人页面添加常用字体、属性样式
+ */
+.position-rel{
+	position:relative;
+}
+.cursor-point{
+	cursor: pointer;
+}
+.block{
+	display:block;
+}
+.inline-bolck{
+	display:inline-block;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.pad-left30{
+	padding-left:30px;
+}
+.font-yahei{
+	font-family: "microsoft yahei";
+}
+
+#content button{
+	outline: none;
+}
+#content label{
+	font-weight: normal;
+}
+#content  a{
+	text-decoration: none;
+}
+ul,li{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+/**
+ * checkbox样式
+ */
+.u-checkbox-outline{
+	border: 2px solid #d7d7d7;
+}
+.u-checkbox.is-checked .u-checkbox-outline {
+    border: 2px solid #2aafd6;
+}
+.u-checkbox.is-checked .u-checkbox-tick-outline {
+    background:#2cafd6;
+}
+
+
+/**
+ * "*"号必填项样式
+ */
+.must-icon:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color: #f00;
+ }
+
+.must-icon::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color: #f00;
+ }
+
+.must-icon:-ms-input-placeholder{
+     color: #f00;
+ }
+
+.must-icon::-webkit-input-placeholder{
+     color: #f00;
+ }
+/**
+ * hrfont图片字体声明定义
+ * description:挑选相应图标并获取字体编码，应用于页面
+ * eg:'<i class="iconfont">&#x33;</i>'
+ * from:lizhik
+ */
+//  @font-face {
+// 	font-family: 'iconfont';
+// 	src: url('/hrcloud/vendor/hrfonts/iconfont.eot'); /* IE9*/
+// 	src: url('/hrcloud/vendor/hrfonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+// 	url('/hrcloud/vendor/hrfonts/iconfont.woff') format('woff'), /* chrome、firefox */
+// 	url('/hrcloud/vendor/hrfonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+// 	url('/hrcloud/vendor/hrfonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+//  }
+//  .iconfont{
+// 	font-family:"iconfont" !important;
+// 	font-size:16px;font-style:normal;
+// 	-webkit-font-smoothing: antialiased;
+// 	-webkit-text-stroke-width: 0.2px;
+// 	-moz-osx-font-smoothing: grayscale;
+// }
+
+/*表单样式*/
+input, select{
+	height: 36px;
+	line-height: 36px;
+}
+
+/**
+ * 分页
+ */
+.paginate-box {
+	overflow: hidden;
+	width: 100%;
+	height: 36px;
+	margin-top: 10px;
+}
+.u-pagination{
+    position: absolute;
+    right: 5px;
+}
+.u-pagination > .active > a, .u-pagination > .active > span, .u-pagination > .active > a:hover, .u-pagination > .active > span:hover, .u-pagination > .active > a:focus, .u-pagination > .active > span:focus {
+	background-color: #d85142;
+	border-color: #d85142;
+}
+
+/**
+ * 相关操作样式
+ * 参见职务图谱页面使用
+ * pengyic
+ */
+.dropdown-icon {
+	float: right;
+	line-height: 26px;
+	font-size: 12px;
+	width: 30px;
+	height: 26px;
+	border-radius: 13px;
+	text-align: center;
+	color: #0377c1;
+	cursor: pointer;
+}
+
+.droplist {
+	display: none;
+	border-top: 1px solid #E3E3E3;
+	border-left: 1px solid #E3E3E3;
+	border-right: 1px solid #E3E3E3;
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	z-index: 3;
+	top: 30px;
+	right: 0;
+}
+
+.droplist a {
+	color: #000000;
+	text-decoration: none;
+	display: inline-block;
+	width: 120px;
+}
+
+.droplist li {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	width: 120px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	cursor: pointer;
+	border-bottom: 1px solid #E3E3E3;
+}
+
+.droplist li:hover {
+	background-color: #EFFAFD;
+}
