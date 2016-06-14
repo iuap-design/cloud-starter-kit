@@ -14,6 +14,10 @@
 - git
 - react
 
+## iUAP Design相关的学习资料
+
+请直接前往我们的[官网](http://design.yyuap.com).
+
 ## 开发准备
 
 ### Nodejs相关
@@ -34,7 +38,7 @@
 - 推荐下载Chrome或Firefox进行前端开发调试
 
 
-## 1. 下载项目并且启动
+## 下载项目并且启动
 
 ```
 $ git clone git@github.com:iuap-design/cloud-starter-kit.git
@@ -48,7 +52,7 @@ $ npm run dev
 # 访问http://localhost:8080
 ```
 
-## 2. 开发和调试
+## 开发和调试
 
 两条命令支持开发：
 - 启动开发
@@ -56,11 +60,11 @@ $ npm run dev
 $ npm run dev
 ```
 
-- 清空hrcloud目录下的资源
+- 清空dist目录下的资源
 ```
 $ npm run clean
 ```
-### 2.1 目录说明
+### 目录说明
 
 - docs/ 文档
 - examples/ 示例
@@ -86,7 +90,7 @@ $ npm run clean
 - vendor/ 第三方插件、框架、类库、路由等
 
 
-### 2.2 开发起步
+### 开发起步
 
 - 在 `src/pages` 目录下新增功能页面，可参考其他目录的代码。
 - 为了方便调试，在 `index.html` 文件内新增你的页面 URL，具体可以看里面的注释部分。
@@ -157,20 +161,20 @@ define(function(require, module, exports){
 这样基本编辑之后，在`index.html`文件中按照注释说明，添加你新增页面的导航，代码如下：
 
 ```
-<a href="#/hrcloud/pages/demo/demo">
+<a href="#/dist/pages/demo/demo">
   <i class="demo-menu-icon u-color-grey-400 fa fa-home fa-2x" role="presentation"></i>
   示例
 </a>
 ```
 
-### 2.3 数据模拟和联调
+### 数据模拟和联调
 
 调试是开发过程中关键而重要的一步，经常在这个阶段出现一些问题，建议的开发步骤是：
 1. 前端本地模拟数据调试，跑通业务逻辑
 2. 前后端本地调试，跑通接口数据
 3. 部署到服务器上联调
 
-#### 2.3.1 前端本地模拟数据调试
+#### 前端本地模拟数据调试
 
 - 数据模拟配置文件： `mock.config.js`，先在这个文件中新增一条模拟路由：
 
@@ -248,19 +252,7 @@ define(function(require, module, exports){
 
 ```
 
-#### 2.3.2 前后端本地联调
+#### 前后端本地联调
 
 - 将`app.js`文件中的`useProxy`值设置为`true`即可
 - `app.js`里有个host字段用于配置请求哪个服务器地址的数据，默认是`http://172.20.14.92`，在前后端本地联调过程中，可以修改这个host指到对应的服务端工程师本机的服务地址，如：`var host = 'http://10.1.255.252:8081';`
-
-### 2.4 iweb基本使用
-
-> 完成表单的展示<br>
-> 完成表单的的增删改查
-
-[iweb开发指导](http://172.20.14.49/iweb/guide/index.html)
-
-## 3. UUI相关的学习资料
-
-- [iweb文档](http://172.20.14.49/iweb/)
-- [示例](http://ieop.yyuap.com/views/demo.html)
