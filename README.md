@@ -1,5 +1,18 @@
+
 # 项目开发指导
 
+## 技术栈
+
+- iuap design
+- nodejs
+- koa
+- gulp
+- director
+- less
+- require
+- babel
+- git
+- react
 
 ## 开发准备
 
