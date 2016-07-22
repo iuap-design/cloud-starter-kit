@@ -16,7 +16,7 @@ var MockServer = require('./server/mockserver');
 var proxyServerConfig = {
     // 是否启用后端代理
     //true -> 使用服务器数据，false -> 使用本地模拟数据
-    useProxy : true,
+    useProxy : false,
     proxyIgnore:[
         "/",
         "/css.js",

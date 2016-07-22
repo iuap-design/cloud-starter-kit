@@ -42,9 +42,7 @@
 
 ```
 $ git clone git@github.com:iuap-design/cloud-starter-kit.git
-$ cd fe
-# 切换到develop分支进行开发
-$ git checkout develop
+$ cd cloud-starter-kit
 # 安装依赖
 $ npm install
 # 启动开发

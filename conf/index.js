@@ -16,7 +16,7 @@ define(function( require, module, exports ){
 
         data.forEach(function( msg ){
           name = msg.name;
-          route = '/hrcloud/' + catogory + '/' + msg.url + '/index';
+          route = '/dist/' + catogory + '/' + msg.url + '/index';
 
           _this.registerRouter(route);
 
@@ -48,7 +48,7 @@ define(function( require, module, exports ){
       }
 
       var route = new Router(routes);
-      route.init('#/hrcloud/pages/home/nav/index');
+      route.init('#/dist/pages/home/nav/index');
     }
   }
 

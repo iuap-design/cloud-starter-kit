@@ -61,7 +61,10 @@ module.exports = function(options) {
       		tokenStorage:tokenStorage
       	}));
       	console.log('已启用后端代理,代理服务器:' + host);
+      }else{
+        console.log('服务已启动: http://localhost:8080');  
       }
+    
 
       app.use(router.routes())
         .use(router.allowedMethods());
