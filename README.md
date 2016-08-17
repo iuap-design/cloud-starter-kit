@@ -4,17 +4,17 @@
 ## 技术栈
 
 - iuap design
-- nodejs
+- node.js
 - koa
 - gulp
-- director
+- director.js
 - less
-- require
+- require.js
 - babel
 - git
 - react
 
-## iUAP Design相关的学习资料
+## iuap design相关的学习资料
 
 请直接前往我们的[官网](http://design.yyuap.com).
 
@@ -70,11 +70,11 @@ $ npm run clean
 - dist/ 编译产出的资源目录
 - index.html 调试首页
 - mock.config.js 模拟数据配置
-- mockData/ 模拟接口json数据
+- mock/ 模拟接口json数据
 - node_modules/ node第三方包
 - package.json npm管理文件
 - README.md 项目说明文件
-- require.config.js requirejs配置
+- rconf 相关配置
 - server/ 本地服务和代理配置
 - src/ 开发源代码目录
   - pages
@@ -154,7 +154,7 @@ define(function(require, module, exports){
 7. `font-awesome`
 8. `uui`
 
-> 其中，UUI是iUAP前端技术部提供的技术产品集合，包含iuap-design、基于ko的model增强库datatable、各种插件
+**iuap design 是 用友网络FED团队开发的前端集成解决方案，包括前端基础库sparrow.js、前端UI框架neoui、基于mvvm框架knockout扩展的应用数据管理库kero、ui和数据模型连接的kero-adapter**
 
 这样基本编辑之后，在`index.html`文件中按照注释说明，添加你新增页面的导航，代码如下：
 
