@@ -41,7 +41,7 @@
 ## 下载项目并且启动
 
 ```
-$ git clone git@github.com:iuap-design/cloud-starter-kit.git
+$ git clone https://github.com/iuap-design/cloud-starter-kit.git
 $ cd cloud-starter-kit
 # 安装依赖
 $ npm install
@@ -69,12 +69,12 @@ $ npm run clean
 - gulpfile.js gulp构建脚本
 - dist/ 编译产出的资源目录
 - index.html 调试首页
-- mock.config.js 模拟数据配置
+- conf/mock.js 模拟数据配置
 - mock/ 模拟接口json数据
 - node_modules/ node第三方包
 - package.json npm管理文件
 - README.md 项目说明文件
-- rconf 相关配置
+- conf 相关配置
 - server/ 本地服务和代理配置
 - src/ 开发源代码目录
   - pages
@@ -115,6 +115,7 @@ $ cd demo && touch demo.html demo.js demo.css
   </h3>
 </div>
 ```
+
 代码清单：`src/pages/time/demo/demo.js`
 
 ```
@@ -143,7 +144,22 @@ define(function(require, module, exports){
 
 ```
 
-对以上代码的基本说明：引入了相应的html片段和css样式，另外，由于是和portal集成，在portal部分加载了以下公共的类库或是框架：
+代码清单：`conf/route.js` (配置页面路由)
+
+```
+{
+     "catogory": "pages/time",  // 配置锁定的类（代码目录）
+       "data": [
+                {
+                    url: "demo/index",   // 配置具体的js文件
+                    name: "demo"           // 添加标识 提高可读性
+                }
+            ]
+},
+
+```
+
+对demo.js的基本说明：引入了相应的html片段和css样式，另外，已经加载了以下公共的类库或是框架：
 
 1. `bootstrap`
 2. `director` **处理前端路由**
@@ -174,23 +190,23 @@ define(function(require, module, exports){
 
 #### 前端本地模拟数据调试
 
-- 数据模拟配置文件： `mock.config.js`，先在这个文件中新增一条模拟路由：
+- 数据模拟配置文件： `mock.js`，先在这个文件中新增一条模拟路由：
 
 ```
 {
 	  type:"get",         // 请求类型
 	  url:"/demo/data",   //请求url
-	  json:"demo.json"    //模拟数据文件，路径地址相对于mockData目录，**可以创建二级甚至三级目录，不要只在一级目录创建文件**
+	  json:"demo.json"    //模拟数据文件，路径地址相对于mock目录，**可以创建二级甚至三级目录，不要只在一级目录创建文件**
 }
 ```
 
-- 在mockData目录下新增相应的json模拟数据
+- 在mock目录下新增相应的json模拟数据
 
 ```
 $ cd mockData && touch demo.json
 ```
 
-编辑demo.json里面的模拟数据，代码清单：`mockData\demo.json`
+编辑demo.json里面的模拟数据，代码清单：`mock/demo.json`
 
 ```
 {
